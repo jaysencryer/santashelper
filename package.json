@@ -8,7 +8,6 @@
     "test": "npx jest --coverage",
     "build": "webpack --mode production",
     "prod:start": "node server.js"
-
   },
   "jest": {
     "modulePaths": [
@@ -35,6 +34,7 @@
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
+    "express": "^4.17.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
