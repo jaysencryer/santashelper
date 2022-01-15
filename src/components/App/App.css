@@ -3,7 +3,11 @@
 }
 
 body {
-    
+    /* background: black; */
+    background-color: red;
+  background-image: linear-gradient(45deg, white 25%, transparent 25.5%, transparent 50%, white 50.5%, white 75%, transparent 75.5%, transparent);
+  background-size: 80px 80px;
+    color: black;
     font-family: var(--main-font);
 }
 
@@ -26,18 +30,20 @@ button {
     background: white;
     border-radius: 6px;
     padding: 15px;
-    font-size: 4vw;
+    font-size: 5vw;
     font-family: var(--main-font);
 }
 
 h1 {
-    font-size: 10vw;
+    font-size: 15vw;
+    text-shadow: 2px 2px 3px gray;
 }
 
 .elf-name {
-    font-size: 5vw;
+    font-size: 8vw;
+    text-shadow: 2px 2px 3px gray;
 }
 
 p {
-    font-size: 3vw;
+    font-size: 5vw;
 }

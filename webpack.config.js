@@ -1,27 +1,45 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
+
 const htmlPlugin = new HtmlWebPackPlugin({
     template: "./src/index.html",
-    filename: "./index.html"
+    filename: "./index.html",
 });
 
-module.exports = {
 
-    mode: 'development',
+const copyPlugin = new CopyPlugin({
+    patterns: [
+        { from: './public/images', to: 'images' }
+    ]
+})
+
+module.exports = {
+    mode: "development",
     module: {
-        
-        rules:[{
-            test: [/\.(js|jsx)$/,/test\.js$/],
-            resolve: {
-              extensions: [".js", ".jsx"]
+        rules: [
+            {
+                test: [/\.(js|jsx)$/, /test\.js$/],
+                resolve: {
+                    extensions: [".js", ".jsx"],
+                },
+                use: {
+                    loader: "babel-loader",
+                },
             },
-            use: {
-              loader: "babel-loader"
-            }
-        },
-        { 
-            test: /\.css$/,
-            use: ["style-loader","css-loader"]
-        }
-    ]},
-    plugins: [htmlPlugin]
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.png$/,
+
+                loader: "file-loader",
+
+                options: {
+                    names: "[path][name].[hash].[ext]",
+                },
+            },
+        ],
+    },
+    plugins: [htmlPlugin, copyPlugin],
 };

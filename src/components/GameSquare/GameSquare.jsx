@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {ELF_NAMES} from '../../constants/constants'
 
@@ -7,7 +7,6 @@ import './GameSquare.css';
 const face = ["ast", "gid", "kri", "nat", "wes", "jag", "jay", "dad"];
 
 const GameSquare = ({type, setType}) => {
-    // const [display, setDisplay] = useState(type);
     
     const clickHandler = () => {
         if (type >= 6) {
@@ -21,7 +20,7 @@ const GameSquare = ({type, setType}) => {
     return(
         <button className='game-square' id='game-square' onClick={() => clickHandler()}>
             <div className='game-square-content'>
-                <img className='square-face' src={`${face[type]}450.png`} alt={ELF_NAMES[type]}></img>
+                <img className='square-face' src={`images/${face[type]}450.png`} alt={ELF_NAMES[type]}></img>
             </div>
         </button>);
 }
