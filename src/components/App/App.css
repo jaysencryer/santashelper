@@ -1,0 +1,43 @@
+:root {
+    --main-font: 'Mountains of Christmas', cursive;
+}
+
+body {
+    
+    font-family: var(--main-font);
+}
+
+.main-canvas {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+}
+
+.game-space {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height:50vh;
+}
+
+button {
+    background: white;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 4vw;
+    font-family: var(--main-font);
+}
+
+h1 {
+    font-size: 10vw;
+}
+
+.elf-name {
+    font-size: 5vw;
+}
+
+p {
+    font-size: 3vw;
+}

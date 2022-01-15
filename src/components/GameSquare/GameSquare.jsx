@@ -1,19 +1,28 @@
 import React, {useState} from 'react';
 
-const typeDisplay = ["blank","ladder","conveyor"];
+import {ELF_NAMES} from '../../constants/constants'
 
-const GameSquare = ({type}) => {
-    const [display, setDisplay] = useState(type);
+import './GameSquare.css';
+
+const face = ["ast", "gid", "kri", "nat", "wes", "jag", "jay", "dad"];
+
+const GameSquare = ({type, setType}) => {
+    // const [display, setDisplay] = useState(type);
     
     const clickHandler = () => {
-        if (display === 2) {
-            setDisplay(0);
+        if (type >= 6) {
+            setType(0);
             return;
         }
-        const newDisplay = display + 1;
-        setDisplay(newDisplay);
+        const newDisplay = type + 1;
+        setType(newDisplay);
     }
 
-    return(<button style={{width:"50px", height: "50px"}} id='game-square' onClick={() => clickHandler()}>{typeDisplay[display]}</button>);
+    return(
+        <button className='game-square' id='game-square' onClick={() => clickHandler()}>
+            <div className='game-square-content'>
+                <img className='square-face' src={`${face[type]}450.png`} alt={ELF_NAMES[type]}></img>
+            </div>
+        </button>);
 }
 export default GameSquare;
