@@ -2,6 +2,7 @@
     box-sizing: border-box;
     position:relative;
     width:40vw;
+    max-width:250px;
     border-radius: 6px;
     padding: 0;
 }
